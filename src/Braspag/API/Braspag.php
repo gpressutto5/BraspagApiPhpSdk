@@ -46,7 +46,7 @@ class Braspag
      * @param \Braspag\API\Sale $sale
      *            The preconfigured Sale
      * @return \Braspag\API\Sale The Sale with authorization, tid, etc. returned by Braspag.
-     * @throws BraspagRequestException if anything gets wrong.
+     * @throws \Braspag\API\Request\BraspagRequestException if anything gets wrong.
      */
     public function createSale(Sale $sale)
     {
@@ -61,7 +61,7 @@ class Braspag
      * @param string $paymentId
      *            The paymentId to be queried
      * @return \Braspag\API\Sale The Sale with authorization, tid, etc. returned by Braspag.
-     * @throws BraspagRequestException if anything gets wrong.
+     * @throws \Braspag\API\Request\BraspagRequestException if anything gets wrong.
      */
     public function getSale($paymentId)
     {
@@ -76,7 +76,7 @@ class Braspag
      * @param string $recurrentPaymentId
      *            The RecurrentPaymentId to be queried
      * @return \Braspag\API\RecurrentPayment The RecurrentPayment with authorization, tid, etc. returned by Braspag.
-     * @throws BraspagRequestException if anything gets wrong.
+     * @throws \Braspag\API\Request\BraspagRequestException if anything gets wrong.
      */
     public function getRecurrentPayment($recurrentPaymentId)
     {
@@ -93,7 +93,7 @@ class Braspag
      * @param integer $amount
      *            Order value in cents
      * @return \Braspag\API\Sale The Sale with authorization, tid, etc. returned by Braspag.
-     * @throws BraspagRequestException if anything gets wrong.
+     * @throws \Braspag\API\Request\BraspagRequestException if anything gets wrong.
      */
     public function cancelSale($paymentId, $amount = null)
     {
@@ -117,7 +117,7 @@ class Braspag
      *            charge
      * @return \Braspag\API\Payment The captured Payment.
      *
-     * @throws BraspagRequestException if anything gets wrong.
+     * @throws \Braspag\API\Request\BraspagRequestException if anything gets wrong.
      */
     public function captureSale($paymentId, $amount = null, $serviceTaxAmount = null)
     {
